@@ -89,8 +89,8 @@ These properties are for use on a service object, in the value of [service](http
 
 | Property Name | Type                       | DNS Packet Representation                         | Example                                                 |
 | ------------- | -------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
-| `sig`         | String or array of strings | `enc=E` where `E` is a string or array of strings | id=s1;t=TestService;se=https://test-service.com/1;enc=1 |
-| `enc`         | String or array of strings | `sig=S` where `S` is a string or array of strings | id=s1;t=TestService;se=https://test-service.com/1;sig=2 |
+| `sig`         | String or array of strings | `sig=S` where `S` is a string or array of strings | id=s1;t=TestService;se=https://test-service.com/1;sig=1 |
+| `enc`         | String or array of strings | `enc=E` where `E` is a string or array of strings | id=s1;t=TestService;se=https://test-service.com/1;enc=2 |
 | `accept`      | Array of strings           | `ac=A` where `A` is a comma-separated list of strings | id=s0;t=DIDCommMessaging;se=https://example.com/didcomm;ac=didcomm/v2 |
 | `routingKeys` | Array of strings           | `rk=R` where `R` is a comma-separated list of strings | id=s0;t=DIDCommMessaging;se=https://example.com/didcomm;rk=did:dht:1wiaaaoagzceggsnwfzmx53rj53xrcw3ih3cp3s14x6bxstpsr8y#0 |
 
