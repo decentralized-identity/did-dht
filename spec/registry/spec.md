@@ -91,6 +91,18 @@ These properties are for use on a service object, in the value of [service](http
 | ------------- | -------------------------- | ------------------------------------------------- | ------------------------------------------------------- |
 | `sig`         | String or array of strings | `enc=E` where `E` is a string or array of strings | id=s1;t=TestService;se=https://test-service.com/1;enc=1 |
 | `enc`         | String or array of strings | `sig=S` where `S` is a string or array of strings | id=s1;t=TestService;se=https://test-service.com/1;sig=2 |
+| `accept`      | Array of strings           | `ac=A` where `A` is a comma-separated list of strings | id=s0;t=DIDCommMessaging;se=https://example.com/didcomm;ac=didcomm/v2 |
+| `routingKeys` | Array of strings           | `rk=R` where `R` is a comma-separated list of strings | id=s0;t=DIDCommMessaging;se=https://example.com/didcomm;rk=did:dht:1wiaaaoagzceggsnwfzmx53rj53xrcw3ih3cp3s14x6bxstpsr8y#0 |
+
+`accept` and `routingKeys` are properties of the `DIDCommMessaging` service
+endpoint, defined by [DIDComm Messaging](https://identity.foundation/didcomm-messaging/spec/#did-document-service-endpoint)
+and registered in the [DID Specification Registries](https://www.w3.org/TR/did-spec-registries/#didcommmessaging).
+Without a mapping for them, a `DIDCommMessaging` service can be expressed in a
+`did:dht` document only as a bare `se=` URI: a resolver recovers where to
+deliver, but not the mediator routing keys needed to wrap the message, so
+delivery through a mediator cannot be completed. They are abbreviated to `ac`
+and `rk` to conserve space in the DNS packet, as [size constraints](../index.html#size-constraints)
+recommend.
 
 ### Interoperable DID Methods
 
